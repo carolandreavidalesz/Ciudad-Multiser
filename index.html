@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LA CIUDAD DEL BUEN SERVICIO</title>
+    <link rel="stylesheet" href="city3d.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">LA CIUDAD DEL BUEN SERVICIO</div>
+        <button id="resetView" class="ghost-btn">Vista general</button>
+      </header>
+
+      <main class="content">
+        <section class="scene-panel">
+          <div class="scene" id="scene">
+            <canvas id="cityCanvas" aria-label="Vista 3D animada de la ciudad del buen servicio"></canvas>
+            <div class="scene-caption" id="sceneCaption">Vista general de la ciudad</div>
+            <div class="subtitle" id="subtitle" aria-live="polite" hidden></div>
+            <div class="tour-controls" id="tourControls" hidden>
+              <button id="pauseTour" type="button" aria-label="Pausar recorrido">Pausar</button>
+              <button id="repeatTopic" type="button" aria-label="Repetir tema">Repetir tema</button>
+              <button id="toggleCaptions" type="button" aria-pressed="true">Subtítulos: sí</button>
+              <button id="toggleSound" type="button" aria-pressed="false">Sonido: sí</button>
+              <button id="nextPlace" type="button" disabled>Siguiente lugar</button>
+            </div>
+            <div class="start-overlay" id="startOverlay">
+              <div class="start-content">
+                <p class="eyebrow">Recorrido interactivo</p>
+                <h2>LA CIUDAD DEL BUEN SERVICIO</h2>
+                <button id="startTour" type="button">¡Comenzar el recorrido!</button>
+              </div>
+            </div>
+            <div class="key-counter" id="keyCounter" hidden><span class="key-mark" aria-hidden="true"></span><span id="keyCount">0 de 9 llaves</span></div>
+            <div class="arrival-toast" id="arrivalToast" aria-live="polite" hidden></div>
+            <section class="attribute-panel justice-layout" id="attributePanel" hidden aria-label="Atributos del buen servicio">
+              <h2>Los 7 atributos del buen servicio</h2>
+              <ul class="attribute-list" id="attributeList"></ul>
+            </section>
+            <div class="treasure-overlay" id="treasureOverlay" hidden>
+              <div class="celebration-effects" id="celebrationEffects" aria-hidden="true"></div>
+              <div class="treasure-message">
+                <p class="treasure-kicker">¡TESORO DESBLOQUEADO!</p>
+                <h2 aria-label="¡WOW! FELICITACIONES, LO HEMOS LOGRADO">¡WOW!<br>FELICITACIONES,<br>LO HEMOS LOGRADO</h2>
+                <p>¡Lo logramos juntos! Cada gesto de buen servicio puede cambiar el día de una persona.</p>
+                <button id="closeTreasure" type="button">Continuar</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="legend-panel">
+          <h1>LA CIUDAD DEL BUEN SERVICIO</h1>
+          <p id="placeDescription">Vista aérea general. Haz clic en un lugar para acercarte.</p>
+          <p class="next-place-hint" id="nextPlaceHint" hidden>Da clic en Siguiente para ir al próximo lugar.</p>
+          <ul class="legend-list">
+            <li><button class="place-button" data-index="0"><span class="dot dot-hotel"></span> Hotel</button></li>
+            <li><button class="place-button" data-index="1"><span class="dot dot-justice"></span> Casa de Justicia</button></li>
+            <li><button class="place-button" data-index="2"><span class="dot dot-image"></span> Imagen y Estilo</button></li>
+            <li><button class="place-button" data-index="3"><span class="dot dot-bank"></span> Banco</button></li>
+            <li><button class="place-button" data-index="4"><span class="dot dot-library"></span> Biblioteca</button></li>
+            <li><button class="place-button" data-index="5"><span class="dot dot-postal"></span> Oficina Postal</button></li>
+            <li><button class="place-button" data-index="6"><span class="dot dot-mail"></span> Oficina de Correo</button></li>
+            <li><button class="place-button" data-index="7"><span class="dot dot-hospital"></span> Hospital</button></li>
+            <li><button class="place-button" data-index="8"><span class="dot dot-info"></span> Punto de Información</button></li>
+          </ul>
+        </aside>
+      </main>
+    </div>
+
+    <script src="vendor/three.min.js"></script>
+    <script src="city3d.js"></script>
+  </body>
+</html>

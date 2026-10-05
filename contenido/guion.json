@@ -1,0 +1,268 @@
+{
+  "voice": "es-CO-SalomeNeural",
+  "playbackRate": 1.3,
+  "intro": {
+    "name": "Bienvenida",
+    "blocks": [
+      {
+        "text": "Hola, soy Camila y hoy los acompaño en este recorrido por la ciudad. Dicen que hay un tesoro escondido, y cada lugar guarda una pista sobre cómo atender mejor a los ciudadanos desde facturación. ¿Empezamos?",
+        "audio": "audio/bienvenida-01.mp3"
+      }
+    ]
+  },
+  "places": [
+    {
+      "id": "hotel",
+      "name": "Hotel",
+      "source": "Manual de atención al ciudadano, página 9.",
+      "highlights": [
+        { "emoji": "👋", "name": "Saludar con una sonrisa" },
+        { "emoji": "🗣️", "name": "Llamar por el nombre" },
+        { "emoji": "🙋", "name": "¿En qué le puedo servir?" },
+        { "emoji": "💛", "name": "Despedir con calidez" },
+        { "emoji": "🧘", "name": "Conservar la calma" },
+        { "emoji": "👀", "name": "Mirar a los ojos" },
+        { "emoji": "🤐", "name": "No interrumpir" }
+      ],
+      "blocks": [
+        {
+          "text": "Todo buen servicio empieza en la puerta. Cuando un ciudadano llega a su ventanilla, lo primero es saludarlo con una sonrisa y llamarlo por su nombre. Enseguida, pregunten: ¿en qué le puedo servir?",
+          "audio": "audio/hotel-01.mp3",
+          "playbackRate": 2.4
+        
+        },
+        {
+          "text": "Y antes de terminar, asegúrense de que no falte nada: ¿hay algo más en que pueda servirle? Despídanse con calidez, con un tono de voz amable, sencillo y respetuoso.",
+          "audio": "audio/hotel-02.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Si el ciudadano se altera, conserven la calma. Mírenlo a los ojos, no lo interrumpan y no lo tomen como algo personal.",
+          "audio": "audio/hotel-03-recortado.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    },
+    {
+      "id": "justicia",
+      "name": "Casa de Justicia",
+      "source": "Manual de atención al ciudadano, páginas 9 y 10.",
+      "highlights": [
+        { "emoji": "🤝", "name": "Respetuoso", "detail": "Reconoce y valora a cada persona y sus diferencias." },
+        { "emoji": "😊", "name": "Amable", "detail": "Es cortés y sincero." },
+        { "emoji": "🛡️", "name": "Confiable", "detail": "Actúa según las normas y busca resultados certeros." },
+        { "emoji": "💛", "name": "Empático", "detail": "Percibe lo que siente el ciudadano y se pone en su lugar." },
+        { "emoji": "🌍", "name": "Incluyente", "detail": "Ofrece calidad a todas las personas, sin distinciones ni discriminación." },
+        { "emoji": "⏰", "name": "Oportuno", "detail": "Atiende en el momento adecuado y cumple los términos acordados." },
+        { "emoji": "✅", "name": "Efectivo", "detail": "Resuelve lo que se pidió." }
+      ],
+      "blocks": [
+        {
+          "text": "En esta parada reunimos siete atributos del buen servicio. El primero es ser respetuosos: reconocer la dignidad de cada persona y valorar sus diferencias.",
+          "audio": "audio/justicia-01.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Ser amables y sinceros; confiables, actuando según las normas y buscando resultados certeros; empáticos, poniéndonos en el lugar del ciudadano; e incluyentes, ofreciendo calidad sin discriminación.",
+          "audio": "audio/justicia-02.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "También debemos ser oportunos, atendiendo en el momento adecuado y cumpliendo los términos acordados; y efectivos, resolviendo lo que la persona vino a solicitar.",
+          "audio": "audio/justicia-03.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    },
+    {
+      "id": "imagen-estilo",
+      "name": "Imagen y Estilo",
+      "source": "Contenido proporcionado por la persona responsable del proyecto.",
+      "highlights": [
+        { "emoji": "🎫", "name": "Carné visible" },
+        { "emoji": "🍽️", "name": "No comer" },
+        { "emoji": "🍬", "name": "No chicle" },
+        { "emoji": "💄", "name": "No maquillaje" },
+        { "emoji": "💅", "name": "No arreglar uñas" },
+        { "emoji": "👀", "name": "Mirar al usuario" },
+        { "emoji": "🧍", "name": "Buena postura" },
+        { "emoji": "🧹", "name": "Orden en el puesto" }
+      ],
+      "blocks": [
+        {
+          "text": "La presentación personal comunica mucho. Por eso, mantén siempre el carné visible.",
+          "audio": "audio/imagen-estilo-01.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Evita comer, mascar chicle, maquillarte o arreglarte las uñas frente al usuario.",
+          "audio": "audio/imagen-estilo-02.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Mira a los ojos, cuida tu postura y mantén tu puesto limpio y ordenado.",
+          "audio": "audio/imagen-estilo-03.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    },
+    {
+      "id": "banco",
+      "name": "Banco",
+      "source": "Manual de atención al ciudadano, páginas 8, 9 y 15 a 17.",
+      "highlights": [
+        { "emoji": "👵", "name": "Personas mayores" },
+        { "emoji": "🤰", "name": "Mujeres embarazadas" },
+        { "emoji": "🧒", "name": "Niños" },
+        { "emoji": "🌎", "name": "Grupos étnicos" },
+        { "emoji": "♿", "name": "Discapacidad" },
+        { "emoji": "📏", "name": "Talla baja" },
+        { "emoji": "🏳️‍🌈", "name": "Identidad de género distinta" }
+      ],
+      "blocks": [
+        {
+          "text": "La atención preferencial se brinda con prioridad a personas que pueden requerir apoyos o consideración particular durante la atención.",
+          "audio": "audio/banco-01.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Incluye a personas mayores, mujeres embarazadas, niños, niñas y adolescentes; personas en situación de vulnerabilidad; y grupos étnicos minoritarios.",
+          "audio": "audio/banco-02.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "También contempla a personas con discapacidad, personas de talla baja y personas con identidades de género distintas. La atención debe reconocer las necesidades particulares de cada persona.",
+          "audio": "audio/banco-03.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    },
+    {
+      "id": "biblioteca",
+      "name": "Biblioteca",
+      "source": "Manual de atención al ciudadano, páginas 10 a 12.",
+      "highlights": [
+        { "emoji": "💡", "name": "Información comprensible" },
+        { "emoji": "💬", "name": "Palabras sencillas" },
+        { "emoji": "✂️", "name": "Frases cortas" },
+        { "emoji": "🔓", "name": "Facilitar acceso a la información" }
+      ],
+      "blocks": [
+        {
+          "text": "El lenguaje claro es una prioridad: la información debe ser comprensible y útil para quien la recibe. Usemos palabras sencillas, frases cortas y una secuencia fácil de seguir.",
+          "audio": "audio/biblioteca-01.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Así reducimos errores, aclaraciones y costos; facilitamos el acceso a la información y promovemos la transparencia y la inclusión, también para personas con discapacidad.",
+          "audio": "audio/biblioteca-02.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    },
+    {
+      "id": "postal",
+      "name": "Oficina Postal",
+      "source": "Manual de atención al ciudadano, páginas 19 y 20.",
+      "highlights": [
+        { "emoji": "👋", "name": "Saludar: buenos días o buenas tardes" },
+        { "emoji": "🏥", "name": "Nombrar la unidad funcional" },
+        { "emoji": "🪪", "name": "Nombre completo y cargo" },
+        { "emoji": "💬", "name": "¿En qué le puedo servir?" }
+      ],
+      "blocks": [
+        {
+          "text": "La atención telefónica tiene cuatro pasos. Primero, saluden con buenos días o buenas tardes. Luego, nombren la unidad funcional desde la que responden.",
+          "audio": "audio/postal-01.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Después, identifíquense con nombre, apellidos y cargo. Y para cerrar el saludo, pregunten: ¿en qué le puedo servir? Háganlo con un tono natural, atento y respetuoso.",
+          "audio": "audio/postal-02.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    },
+    {
+      "id": "correo",
+      "name": "Oficina de Correo",
+      "source": "Manual de atención al ciudadano, páginas 22 y 23.",
+      "highlights": [
+        { "emoji": "📨", "name": "Revisar correo institucional" },
+        { "emoji": "📝", "name": "Asunto claro y conciso" },
+        { "emoji": "✍️", "name": "Firma de quien escribe" },
+        { "emoji": "🤝", "name": "Escribir de forma cortés" },
+        { "emoji": "🚫", "name": "No uso personal" }
+      ],
+      "blocks": [
+        {
+          "text": "Revisen el correo institucional durante los primeros diez minutos de la jornada, tanto en la mañana como en la tarde, y contesten los mensajes que correspondan a la institución.",
+          "audio": "audio/correo-01.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Respondan desde la cuenta oficial, usen un asunto claro y conciso, y asegúrense de que la firma permita identificar a quien escribe y contactarlo.",
+          "audio": "audio/correo-02.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Escriban de forma cortés, impersonal y precisa. Sean breves, respondan todas las preguntas y revisen el mensaje antes de enviarlo. El correo institucional no se usa para asuntos personales.",
+          "audio": "audio/correo-03.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    },
+    {
+      "id": "hospital",
+      "name": "Hospital",
+      "source": "Manual de atención al ciudadano, página 28.",
+      "highlights": [
+        { "emoji": "📣", "name": "Ser informado" },
+        { "emoji": "⏱️", "name": "Recibir atención oportuna y humanizada" },
+        { "emoji": "🕊️", "name": "Elegir de manera libre" },
+        { "emoji": "🔒", "name": "Protección de confidencialidad" }
+      ],
+      "blocks": [
+        {
+          "text": "Los derechos del paciente se organizan en cuatro grupos. El primero es a ser informado: incluye conocer sus derechos, los procedimientos, los servicios y los costos de la atención, algo que facturación comunica cada día.",
+          "audio": "audio/hospital-01.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "El segundo es a recibir atención oportuna, pertinente, segura y humanizada, sin discriminación. El tercero es a elegir, por ejemplo, aceptar o rechazar tratamientos y procedimientos de manera libre y voluntaria.",
+          "audio": "audio/hospital-02.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "El cuarto es a que se proteja la confidencialidad de la historia clínica, la integridad física y la seguridad de las pertenencias personales.",
+          "audio": "audio/hospital-03.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    },
+    {
+      "id": "informacion",
+      "name": "Punto de Información",
+      "source": "Manual de atención al ciudadano, página 9.",
+      "highlights": [
+        { "emoji": "📍", "name": "Ubicación de oficinas" },
+        { "emoji": "🏥", "name": "Puntos de atención" },
+        { "emoji": "💵", "name": "Cajas de pago" },
+        { "emoji": "🧾", "name": "Puntos de facturación" },
+        { "emoji": "🕒", "name": "Horarios de atención" }
+      ],
+      "blocks": [
+        {
+          "text": "Una buena orientación también es servicio. Manténganse informados sobre la ubicación de oficinas, puntos de atención, unidades sanitarias, cajas de pago y puntos de facturación.",
+          "audio": "audio/informacion-01.mp3",
+          "playbackRate": 2.4
+        },
+        {
+          "text": "Si alguien no sabe a dónde ir, escuchen su necesidad y denle una indicación clara. Conocer los horarios de atención también ayuda a orientar mejor a cada ciudadano.",
+          "audio": "audio/informacion-02.mp3",
+          "playbackRate": 2.4
+        }
+      ]
+    }
+  ]
+}

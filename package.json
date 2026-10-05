@@ -1,0 +1,11 @@
+{
+  "name": "ciudad-del-buen-servicio",
+  "private": true,
+  "scripts": {
+    "start": "node preview-server.mjs",
+    "audio:generate": "node generate-audio.mjs"
+  },
+  "devDependencies": {
+    "msedge-tts": "2.0.9"
+  }
+}
