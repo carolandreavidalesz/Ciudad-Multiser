@@ -1258,40 +1258,12 @@ pauseButton.addEventListener('click', () => {
     pauseButton.textContent = 'Continuar';
   }
 });
-
-  // Control para archivos MP3
-  if (audioPlayer.paused) {
-    audioPlayer.playbackRate = 0.85;
-    audioPlayer.play().catch((error) => console.error('Error al reanudar:', error));
-    pauseButton.textContent = 'Pausar';
-  } else {
-    audioPlayer.pause();
-    pauseButton.textContent = 'Continuar';
-  }
-});
-
-repeatButton.addEventListener('click', () => {
-  const place = placeData[currentPlaceIndex];
-  const guidePlace = guideData?.places.find((item) => item.id === place?.id);
-  if (!guidePlace?.blocks.length) return;
-  canAdvanceRoute = false;
-  nextPlaceButton.disabled = true;
-  updateRouteButtons();
-  playBlocks(guidePlace.blocks, () => finishPlaceNarration(place));
-});
-
-captionsButton.addEventListener('click', () => {
-  captionsEnabled = !captionsEnabled;
-  captionsButton.setAttribute('aria-pressed', String(captionsEnabled));
-  captionsButton.textContent = `Subtítulos: ${captionsEnabled ? 'sí' : 'no'}`;
-  subtitleElement.hidden = !captionsEnabled || !currentBlocks[currentBlockIndex];
-});
-
 soundButton.addEventListener('click', () => {
   audioPlayer.muted = !audioPlayer.muted;
   soundButton.setAttribute('aria-pressed', String(audioPlayer.muted));
   soundButton.textContent = `Sonido: ${audioPlayer.muted ? 'no' : 'sí'}`;
 });
+
 audioPlayer.addEventListener('play', () => {
   audioPlayer.playbackRate = 0.85;
 });
