@@ -813,7 +813,7 @@ const guideReady = fetch('contenido/guion.json')
   })
   .then((guide) => {
     guideData = guide;
-    audioPlayer.playbackRate = guide.playbackRate ?? 1;
+    audioPlayer.playbackRate = guide.playbackRate ?? 0,88;
     audioPlayer.preservesPitch = true;
     startButton.textContent = '¡Comenzar el recorrido!';
     startButton.disabled = false;
@@ -872,8 +872,8 @@ async function playCurrentBlock() {
 
   audioPlayer.pause();
   audioPlayer.src = audioSource;
-  audioPlayer.defaultPlaybackRate = playbackRate;
-  audioPlayer.playbackRate = playbackRate;
+  audioPlayer.defaultPlaybackRate = 0.88;
+audioPlayer.playbackRate = 0.88;
   audioPlayer.preservesPitch = true;
   audioPlayer.currentTime = 0;
   audioPlayer.play().then(() => {
@@ -1234,11 +1234,14 @@ startButton.addEventListener('click', () => {
 
 pauseButton.addEventListener('click', () => {
   if (audioPlayer.paused) {
-    audioPlayer.play().catch((error) => console.error('No se pudo continuar el audio:', error));
+    audioPlayer.playbackRate = 0.88;
+    audioPlayer.play().catch((error) => console.error('No se pudo continuar:', error));
     pauseButton.textContent = 'Pausar';
+    if ('speechSynthesis' in window) window.speechSynthesis.resume();
   } else {
     audioPlayer.pause();
     pauseButton.textContent = 'Continuar';
+    if ('speechSynthesis' in window) window.speechSynthesis.pause();
   }
 });
 
@@ -1264,7 +1267,9 @@ soundButton.addEventListener('click', () => {
   soundButton.setAttribute('aria-pressed', String(audioPlayer.muted));
   soundButton.textContent = `Sonido: ${audioPlayer.muted ? 'no' : 'sí'}`;
 });
-
+audioPlayer.addEventListener('play', () => {
+  audioPlayer.playbackRate = 0.85;
+});
 nextPlaceButton.addEventListener('click', () => {
   if (!canAdvanceRoute) return;
   if (nextExpectedIndex < placeData.length) {
