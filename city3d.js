@@ -775,7 +775,7 @@ function playSpeechFallback(text) {
     utterance.voice = preferredVoice;
   }
   utterance.lang = 'es-CO';
-  utterance.rate = 1.35;
+  utterance.rate = 0.85;
   utterance.pitch = 1.2;
   utterance.volume = 1;
   utterance.onstart = () => {
@@ -1233,15 +1233,40 @@ startButton.addEventListener('click', () => {
 });
 
 pauseButton.addEventListener('click', () => {
+  const isSpeaking = window.speechSynthesis && window.speechSynthesis.speaking;
+  const isSpeechPaused = window.speechSynthesis && window.speechSynthesis.paused;
+
+  // Control para la voz sintética del navegador
+  if (isSpeaking || isSpeechPaused) {
+    if (isSpeechPaused) {
+      window.speechSynthesis.resume();
+      pauseButton.textContent = 'Pausar';
+    } else {
+      window.speechSynthesis.pause();
+      pauseButton.textContent = 'Continuar';
+    }
+    return;
+  }
+
+  // Control para archivos de audio MP3
   if (audioPlayer.paused) {
-    audioPlayer.playbackRate = 0.88;
-    audioPlayer.play().catch((error) => console.error('No se pudo continuar:', error));
+    audioPlayer.playbackRate = 0.85;
+    audioPlayer.play().catch((error) => console.error('Error al reanudar:', error));
     pauseButton.textContent = 'Pausar';
-    if ('speechSynthesis' in window) window.speechSynthesis.resume();
   } else {
     audioPlayer.pause();
     pauseButton.textContent = 'Continuar';
-    if ('speechSynthesis' in window) window.speechSynthesis.pause();
+  }
+});
+
+  // Control para archivos MP3
+  if (audioPlayer.paused) {
+    audioPlayer.playbackRate = 0.85;
+    audioPlayer.play().catch((error) => console.error('Error al reanudar:', error));
+    pauseButton.textContent = 'Pausar';
+  } else {
+    audioPlayer.pause();
+    pauseButton.textContent = 'Continuar';
   }
 });
 
