@@ -1,4 +1,4 @@
-# Curso interactivo "La ciudad del buen servicio" – Multiser
+# Curso interactivo "RUTA DEL BUEN SERVICIO: FACTURACIÓN" – Multiser
 
 ## 1. Qué estamos construyendo
 Un recorrido interactivo en formato de ciudad ilustrada para personas empleadas del área de facturación de un hospital (empresa: **Multiser**, Colombia). Una guía llamada **Camila** acompaña todo el recorrido, camina por las calles de la ciudad y explica, en voz y con subtítulos, los temas del manual de servicio al ciudadano (archivo PDF en esta carpeta: léelo completo antes de empezar y usa SOLO su contenido para los temas).

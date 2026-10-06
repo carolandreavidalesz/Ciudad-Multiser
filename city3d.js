@@ -1,13 +1,13 @@
 const placeData = [
-  { id: 'hotel', name: 'Hotel', position: [-48, 32], color: 0xf3902e, height: 12, style: 'hotel' },
-  { id: 'justicia', name: 'Casa de Justicia', position: [-16, -2], color: 0x35c47a, height: 13, style: 'justice' },
-  { id: 'imagen-estilo', name: 'Imagen y Estilo', position: [16, -38], color: 0xee678e, height: 10, style: 'studio' },
-  { id: 'banco', name: 'Banco', position: [48, -2], color: 0x45b84d, height: 12, style: 'bank' },
-  { id: 'biblioteca', name: 'Biblioteca', position: [48, -38], color: 0x3499d1, height: 14, style: 'library' },
-  { id: 'postal', name: 'Oficina Postal', position: [-48, -38], color: 0xf6c331, height: 9, style: 'postal' },
-  { id: 'correo', name: 'Oficina de Correo', position: [-16, 32], color: 0x2cb889, height: 10, style: 'mail' },
-  { id: 'hospital', name: 'Hospital', position: [16, 32], color: 0x32b9da, height: 11, style: 'hospital' },
-  { id: 'informacion', name: 'Punto de Información', position: [48, 32], color: 0xef6a45, height: 9, style: 'info' }
+  { id: 'urgencias', name: 'Facturación Urgencias', position: [-48, 32], color: 0xf3902e, height: 12, style: 'Facturación Urgencias' },
+  { id: 'canguro', name: 'Facturación Canguro y Pediatría', position: [-16, -2], color: 0x35c47a, height: 13, style: 'justice' },
+  { id: 'oncologia', name: 'Facturación Oncología', position: [16, -38], color: 0xee678e, height: 10, style: 'studio' },
+  { id: 'salud_mental', name: 'Facturación salud_mental', position: [48, -2], color: 0x45b84d, height: 12, style: 'bank' },
+  { id: 'laboratorio', name: 'Facturación Laboratorio', position: [48, -38], color: 0x3499d1, height: 14, style: 'library' },
+  { id: 'cirugia', name: 'Facturación Cirugía', position: [-48, -38], color: 0xf6c331, height: 9, style: 'Facturación Cirugía' },
+  { id: 'piso_3', name: 'Facturación Piso 3', position: [-16, 32], color: 0x2cb889, height: 10, style: 'mail' },
+  { id: 'piso_5', name: 'Facturación Piso 5', position: [16, 32], color: 0x32b9da, height: 11, style: 'Facturación Piso 5' },
+  { id: 'piso_7', name: 'Facturación Piso 7', position: [48, 32], color: 0xef6a45, height: 9, style: 'info' }
 ];
 
 const sceneElement = document.getElementById('scene');
@@ -246,7 +246,7 @@ function addFacadeWindows(group, width, height, depth, style) {
   const rows = Math.max(2, Math.floor((height - 2.4) / 2.8));
   const count = columns * rows;
   const glassMaterial = new THREE.MeshStandardMaterial({
-    color: style === 'bank' ? 0x62a2b1 : style === 'hospital' ? 0x9fc9ca : 0x668993,
+    color: style === 'bank' ? 0x62a2b1 : style === 'Facturación Piso 5' ? 0x9fc9ca : 0x668993,
     roughness: style === 'bank' ? 0.2 : 0.3,
     metalness: style === 'bank' ? 0.18 : 0.04,
     emissive: 0x233c43,
@@ -284,8 +284,8 @@ function createBuilding(place, index) {
   const group = new THREE.Group();
   group.position.set(place.position[0], 0, place.position[1]);
   group.userData.placeIndex = index;
-  const width = place.style === 'hospital' ? 17 : place.style === 'library' ? 14 : 12;
-  const depth = place.style === 'hospital' ? 12 : 10;
+  const width = place.style === 'Piso_5' ? 17 : place.style === 'library' ? 14 : 12;
+  const depth = place.style === 'Piso_5' ? 12 : 10;
   const facade = new THREE.MeshStandardMaterial({
     map: makeFacadeTexture(place.color, place.style),
     color: 0xffffff,
@@ -301,7 +301,7 @@ function createBuilding(place, index) {
   addFacadeWindows(group, width, place.height, depth, place.style);
   addBox(group, 1.6, 2.8, 0.24, new THREE.MeshStandardMaterial({ color: 0x354c50, roughness: 0.44, metalness: 0.12 }), 0, 1.9, depth / 2 + 0.2);
 
-  if (place.style === 'hotel') {
+  if (place.style === 'Facturación Urgencias') {
     const canopyMaterial = new THREE.MeshStandardMaterial({ color: 0x9d4e43, roughness: 0.72 });
     addBox(group, width + 2, 0.5, 3.4, canopyMaterial, 0, 4.2, depth / 2 + 1.2);
     [-3.4, 3.4].forEach((x) => addBox(group, 0.34, 3.6, 0.34, foundation, x, 2.2, depth / 2 + 1.4));
@@ -340,13 +340,13 @@ function createBuilding(place, index) {
     }
   }
 
-  if (place.style === 'postal' || place.style === 'mail') {
-    const canopy = new THREE.MeshStandardMaterial({ color: place.style === 'postal' ? 0x9c4a37 : 0x487b64, roughness: 0.8 });
+  if (place.style === 'Facturación Cirugía' || place.style === 'mail') {
+    const canopy = new THREE.MeshStandardMaterial({ color: place.style === 'Facturación Cirugía' ? 0x9c4a37 : 0x487b64, roughness: 0.8 });
     addBox(group, width + 1.2, 0.45, 2.4, canopy, 0, 3.3, depth / 2 + 0.9);
     addBox(group, 1.3, 1.6, 0.3, new THREE.MeshStandardMaterial({ color: 0xecd89e }), width / 3, 1.55, depth / 2 + 0.24);
   }
 
-  if (place.style === 'hospital') {
+  if (place.style === 'Facturación Piso_5') {
     const wing = new THREE.MeshStandardMaterial({ color: 0xd4e8e6, roughness: 0.72 });
     addBox(group, 5.5, 4.4, 5.2, wing, -7.8, 2.7, -1.7);
     const crossMaterial = new THREE.MeshStandardMaterial({ color: 0xf4f4e8, emissive: 0x6a8f8d, emissiveIntensity: 0.14 });
@@ -935,6 +935,7 @@ function enableTypewriterWhenVisible() {
 }
 
 function showArrival(place, previewOnly = false) {
+  if (!previewOnly) collectedKeys.add(place.id);
   const guidePlace = guideData.places.find((item) => item.id === place.id);
   attributePanel.hidden = true;
   attributeList.replaceChildren();
@@ -958,53 +959,56 @@ function showArrival(place, previewOnly = false) {
     return;
   }
 
-  if (['hotel', 'justicia', 'imagen-estilo', 'banco', 'biblioteca', 'correo', 'hospital', 'informacion', 'postal'].includes(place.id) && guidePlace.highlights?.length) {
-    descriptionElement.textContent = place.id === 'justicia'
+  if (['urgencias', 'canguro', 'oncologia', 'salud_mental', 'laboratorio', 'cirugia', 'piso_3', 'piso_5', 'piso_7'].includes(place.id)) {
+  descriptionElement.textContent = 
+    place.id === 'canguro'
       ? 'Cada uno de estos atributos ayuda a brindar un mejor servicio.'
-      : place.id === 'imagen-estilo'
-        ? 'Una buena presentación personal también comunica servicio.'
-        : place.id === 'banco'
-          ? 'La atención preferencial reconoce las necesidades de cada persona.'
-          : place.id === 'biblioteca'
-            ? 'El lenguaje claro facilita la comprensión y el acceso a la información.'
-            : place.id === 'correo'
-              ? 'El correo institucional requiere claridad, cortesía y buen uso.'
-                : place.id === 'hospital'
-                  ? 'Los derechos del paciente reúnen cuatro aspectos fundamentales de su atención.'
-                  : place.id === 'informacion'
-                    ? 'Conocer los servicios y horarios permite orientar mejor a cada persona.'
-                    : place.id === 'postal'
-                      ? 'Una atención telefónica clara empieza desde el saludo.'
-            : 'Claves para brindar una atención cálida desde el primer saludo.';
+      : place.id === 'oncologia'
+      ? 'Una buena presentación personal también comunica servicio.'
+      : place.id === 'salud_mental'
+      ? 'La atención preferencial reconoce las necesidades de cada persona.'
+      : place.id === 'laboratorio'
+      ? 'El lenguaje claro facilita la comprensión y el acceso a la información.'
+      : place.id === 'piso_3'
+      ? 'El servicio institucional requiere claridad, agilidad y respeto.'
+      : place.id === 'piso_5'
+      ? 'Los derechos del paciente reúnen cuatro aspectos fundamentales.'
+      : place.id === 'piso_7'
+      ? 'Conocer los servicios y horarios permite orientar de manera oportuna.'
+      : place.id === 'cirugia'
+      ? 'Una atención telefónica clara empieza desde el saludo y la disponibilidad.'
+      : 'Claves para brindar una atención cálida desde el primer contacto.';
     attributePanel.classList.add('justice-layout');
-    attributePanel.classList.toggle('bank-layout', place.id === 'banco');
-    attributePanel.classList.toggle('correo-layout', place.id === 'correo');
-    attributePanel.classList.toggle('hospital-layout', place.id === 'hospital');
-    attributePanel.classList.toggle('informacion-layout', place.id === 'informacion');
+    attributePanel.classList.toggle('bank-layout', place.id === 'salud_mental');
+attributePanel.classList.toggle('piso_3-layout', place.id === 'piso_3');
+attributePanel.classList.toggle('piso_5-layout', place.id === 'piso_5');
+attributePanel.classList.toggle('piso_7-layout', place.id === 'piso_7');
     enableTypewriterWhenVisible();
     attributePanel.style.color = '#111111';
     const title = attributePanel.querySelector('h2');
     if (title) {
-      title.textContent = place.id === 'justicia'
-        ? 'Los 7 atributos del buen servicio'
-        : place.id === 'imagen-estilo' ? 'Imagen y estilo'
-          : place.id === 'banco' ? 'Atención preferencial'
-            : place.id === 'biblioteca' ? 'Lenguaje claro'
-              : place.id === 'correo' ? 'Correo institucional'
-                  : place.id === 'hospital' ? 'Derechos del paciente'
-                    : place.id === 'informacion' ? 'Orientación clara'
-                      : place.id === 'postal' ? 'Atención telefónica' : 'Claves de atención';
+      title.textContent = place.id === 'canguro'
+      ? 'Los 7 atributos del buen servicio'
+      : place.id === 'oncologia' ? 'Imagen y estilo'
+      : place.id === 'salud_mental' ? 'Atención preferencial'
+      : place.id === 'laboratorio' ? 'Lenguaje claro'
+      : place.id === 'piso_3' ? 'Facturación Piso 3'
+      : place.id === 'piso_5' ? 'Derechos del paciente'
+      : place.id === 'piso_7' ? 'Servicios y horarios'
+      : place.id === 'cirugia' ? 'Atención telefónica'
+      : 'Atención al usuario';
       title.style.color = '#111111';
     }
-    attributePanel.setAttribute('aria-label', place.id === 'justicia'
-      ? 'Siete atributos del buen servicio'
-      : place.id === 'imagen-estilo' ? 'Claves de presentación personal'
-        : place.id === 'banco' ? 'Grupos de atención preferencial'
-          : place.id === 'biblioteca' ? 'Claves de lenguaje claro'
-            : place.id === 'correo' ? 'Claves para el correo institucional'
-                  : place.id === 'hospital' ? 'Derechos del paciente'
-                    : place.id === 'informacion' ? 'Claves de orientación'
-                      : place.id === 'postal' ? 'Pasos de atención telefónica' : 'Claves para una buena atención');
+    attributePanel.setAttribute('aria-label', place.id === 'canguro'
+  ? 'Siete atributos del buen servicio'
+  : place.id === 'oncologia' ? 'Claves de presentación'
+  : place.id === 'salud_mental' ? 'Claves de atención'
+  : place.id === 'laboratorio' ? 'Lenguaje claro'
+  : place.id === 'piso_3' ? 'Atención institucional'
+  : place.id === 'piso_5' ? 'Derechos del paciente'
+  : place.id === 'piso_7' ? 'Servicios y horarios'
+  : place.id === 'cirugia' ? 'Atención telefónica'
+  : 'Información de la estación');
     guidePlace.highlights.forEach((highlight, index) => {
       const item = document.createElement('li');
       item.className = 'attribute-item';
@@ -1029,9 +1033,9 @@ function showArrival(place, previewOnly = false) {
   } else {
     attributePanel.classList.remove('justice-layout');
     attributePanel.classList.remove('bank-layout');
-    attributePanel.classList.remove('correo-layout');
-    attributePanel.classList.remove('hospital-layout');
-    attributePanel.classList.remove('informacion-layout');
+    attributePanel.classList.remove('Piso_3-layout');
+    attributePanel.classList.remove('Piso_5-layout');
+    attributePanel.classList.remove('Piso_7-layout');
     attributePanel.classList.remove('typewriter-layout');
     if (typewriterVisibilityHandler) {
       document.removeEventListener('visibilitychange', typewriterVisibilityHandler);
@@ -1270,7 +1274,7 @@ nextPlaceButton.addEventListener('click', () => {
   if (collectedKeys.size === placeData.length) {
     travelToTreasure();
   } else {
-    subtitleElement.textContent = 'El cofre espera la llave de Imagen y Estilo. Ese tema está pendiente de validar con el manual.';
+ subtitleElement.textContent = 'El cofre espera la llave de Facturación Oncología. Ese tema está pendiente de validar con el manual.';
     subtitleElement.hidden = !captionsEnabled;
     captionElement.textContent = `${collectedKeys.size} de ${placeData.length} llaves reunidas`;
   }
